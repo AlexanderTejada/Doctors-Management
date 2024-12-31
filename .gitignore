@@ -1,0 +1,92 @@
+# Visual Studio
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+out/
+
+# Debugging
+*.log
+*.tsscache
+*.vspscc
+.vscode/launch.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.lock
+*.pid
+*.seed
+*.log
+*.gz
+
+# Runtime files
+*.pid.lock
+*.log.*
+
+# DotNet artifacts
+*.exe
+*.dll
+*.db
+*.pdb
+*.cache
+*.nuspec
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Config and secrets
+appsettings.json
+appsettings.Development.json
+secrets.json
+
+# Logs
+logs/
+*.log
+logs/**/*.log
+
+# Node.js
+node_modules/
+
+# Dependencies
+packages/
+.nuget/
+
+# Generated files
+*.generated.cs
+
+# IDE files
+.idea/
+*.iml
+
+# Testing files
+TestResults/
+*.coverage
+coverage/
+
+# macOS
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# NCrunch
+*.ncrunch*
+~$*
+
+# Rider
+.idea/

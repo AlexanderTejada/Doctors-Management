@@ -1,0 +1,172 @@
+﻿/* Fondo general */
+.swagger-ui {
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    color: #2e2e2e;
+    font-family: 'Roboto', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+    .swagger-ui .topbar {
+        background: linear-gradient(90deg, #007BFF, #89CFF0);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+     
+        .swagger-ui .topbar a {
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+            .swagger-ui .topbar a:hover {
+                color: #d6e9ff;
+            }
+
+    .swagger-ui .info h1 {
+        color: #003f7f;
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        transition: color 0.3s ease;
+    }
+
+        .swagger-ui .info h1:hover {
+            color: #002c5c;
+        }
+
+    .swagger-ui .info p {
+        color: #5F6368;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .swagger-ui .opblock {
+        background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+        border: 1px solid #dcdcdc;
+        border-radius: 12px;
+        margin: 12px 0;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .swagger-ui .opblock:hover {
+            background: linear-gradient(135deg, #e0f2ff, #b3e5fc);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .swagger-ui .opblock.opblock-get {
+            border-left: 6px solid #007BFF;
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+        .swagger-ui .opblock.opblock-post {
+            border-left: 6px solid #FF5733;
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+        .swagger-ui .opblock.opblock-put {
+            border-left: 6px solid #FFC107;
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+        .swagger-ui .opblock.opblock-delete {
+            border-left: 6px solid #F44336;
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.swagger-ui .btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.swagger-ui .btn-clear {
+    background: linear-gradient(90deg, #FFDD57, #FFB600);
+    color: #333333;
+}
+
+    .swagger-ui .btn-clear:hover {
+        background: linear-gradient(90deg, #FFB600, #FFDD57);
+        transform: scale(1.02);
+    }
+
+.swagger-ui .btn-execute {
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    color: white;
+}
+
+    .swagger-ui .btn-execute:hover {
+        background: linear-gradient(90deg, #388E3C, #4CAF50);
+        transform: scale(1.02);
+    }
+
+.swagger-ui .btn:hover {
+    transform: scale(1.01);
+}
+
+.swagger-ui input[type="text"],
+.swagger-ui textarea {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 10px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+    .swagger-ui input[type="text"]:focus,
+    .swagger-ui textarea:focus {
+        border-color: #007BFF;
+        background: #ffffff;
+    }
+
+.swagger-ui a {
+    color: #003f7f;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+    .swagger-ui a:hover {
+        color: #002c5c;
+        text-decoration: underline;
+    }
+
+.example.microlight {
+    background: #f4f4f4;
+    color: #5e5e5e;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+    .example.microlight:hover {
+        background: #e8f5e9;
+        color: #4CAF50;
+    }
+
+/* Media Queries para animaciones */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
