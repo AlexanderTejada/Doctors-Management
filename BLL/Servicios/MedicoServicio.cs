@@ -106,7 +106,7 @@ namespace BLL.Servicios
         {
             try
             {
-                var lista = await _unidadTrabajo.Medico.ObtenerTodos(orderBy: e => e.OrderBy(e => e.Apellidos));
+                var lista = await _unidadTrabajo.Medico.ObtenerTodos(incluirPropiedades: "Especialidad", orderBy: e => e.OrderBy(e => e.Apellidos));
                 return _mapper.Map<IEnumerable<MedicoDto>>(lista);
             }
             catch (Exception)
