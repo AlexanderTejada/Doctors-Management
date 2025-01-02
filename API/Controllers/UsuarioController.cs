@@ -70,19 +70,24 @@ namespace API.Controllers
             var usuario = new UsuarioAplicacion
             {
                 UserName = registroDto.UserName.ToLower(),
-               // PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registroDto.Password)),
-               // PasswordSalt = hmac.Key
+                Email = registroDto.Email,
+                Nombres = registroDto.Nombres,
+                Apellidos = registroDto.Apellidos,
+                // PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registroDto.Password)),
+                // PasswordSalt = hmac.Key
             };
 
             var resultado = await _userManager.CreateAsync(usuario, registroDto.Password);
             if (!resultado.Succeeded) return BadRequest(resultado.Errors);
 
+            var rolResultado = await _userManager.AddToRoleAsync(usuario, registroDto.Rol);
+            if (!rolResultado.Succeeded) return BadRequest("Error al Agrergar Rol al Usuario");
             // _db.Usuarios.Add(usuario);
             //await _db.SaveChangesAsync();
             return new UsuarioDto
             {
                 Username = usuario.UserName,
-                Token =_tokenServicio.CrearToken(usuario)
+                Token =await _tokenServicio.CrearToken(usuario)
             };
         }
 
@@ -110,7 +115,7 @@ namespace API.Controllers
             return new UsuarioDto
             {
                 Username = usuario.UserName,
-                Token = _tokenServicio.CrearToken(usuario)
+                Token =await _tokenServicio.CrearToken(usuario)
             };
         }
 
