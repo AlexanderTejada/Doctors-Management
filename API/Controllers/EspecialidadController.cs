@@ -29,7 +29,26 @@ namespace API.Controllers
             {
                 _response.IsExistoso = false;
                 _response.Mensaje = ex.Message;
-                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.StatusCode = HttpStatusCode.BadRequest;
+
+            }
+            return Ok(_response);
+        }
+
+        [HttpGet("ListadoActivos")]
+        public async Task<IActionResult> GetActivos()
+        {
+            try
+            {
+                _response.Resultado = await _especialidadServicio.ObtenerActivos();
+                _response.IsExistoso = true;
+                _response.StatusCode = HttpStatusCode.OK;
+            }
+            catch (Exception ex)
+            {
+                _response.IsExistoso = false;
+                _response.Mensaje = ex.Message;
+                _response.StatusCode = HttpStatusCode.BadRequest;
 
             }
             return Ok(_response);

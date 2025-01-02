@@ -64,12 +64,12 @@ namespace API.Controllers
         {
             if (await UsuarioExiste(registroDto.UserName)) return BadRequest("El usuario ya existe");
 
-            using var hmac = new HMACSHA512();
+          //  using var hmac = new HMACSHA512();  //creacion de password
             var usuario = new Usuario
             {
                 UserName = registroDto.UserName.ToLower(),
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registroDto.Password)),
-                PasswordSalt = hmac.Key
+               // PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registroDto.Password)),
+               // PasswordSalt = hmac.Key
             };
 
             _db.Usuarios.Add(usuario);
@@ -92,13 +92,13 @@ namespace API.Controllers
             if (usuario == null) return Unauthorized("Usuario incorrecto");
 
             using var hmac = new HMACSHA512(usuario.PasswordSalt);
-            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+            //var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
 
-            for (int i = 0; i < computedHash.Length; i++)
+           /* for (int i = 0; i < computedHash.Length; i++)
             {
                 if (computedHash[i] != usuario.PasswordHash[i]) return Unauthorized("Contraseña incorrecta");
             }
-
+           */
             return new UsuarioDto
             {
                 Username = usuario.UserName,
