@@ -61,6 +61,7 @@ namespace API.Controllers
         //// 🌟          REGISTER NEW USER (POST)                 🌟
         //// 🌟        Endpoint: POST api/usuario/registro        🌟
         //// 🌟 ================================================= 🌟
+        [Authorize(Policy ="AdminRol")]
         [HttpPost("registro")]
         public async Task<ActionResult<UsuarioDto>> Registro(RegistroDto registroDto)
         {
