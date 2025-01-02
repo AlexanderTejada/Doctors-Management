@@ -9,6 +9,6 @@ namespace Data.Interface
 {
     public interface ITokenServicio
     {
-        string CrearToken(Usuario usuario); 
+        string CrearToken(UsuarioAplicacion usuario); 
     }
 }
